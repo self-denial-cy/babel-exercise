@@ -1,5 +1,3 @@
-import '@babel/polyfill';
-
 import './b';
 
 async function asyncFn() {
