@@ -9,6 +9,8 @@
     "@babel/preset-env": "^7.20.2"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1"
+    "@babel/runtime": "^7.20.1",
+    "@babel/runtime-corejs2": "^7.20.1",
+    "@babel/runtime-corejs3": "^7.20.1"
   }
 }

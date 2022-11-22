@@ -1,13 +1,3 @@
-import './b';
-
-async function asyncFn() {
-    console.log('this is async function');
-}
-
-(async function () {
-    await asyncFn();
-})();
-
 const fn = () => {
     console.log('this is arrow function');
 };
