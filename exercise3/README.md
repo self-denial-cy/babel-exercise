@@ -61,3 +61,10 @@ try {
 - 开发库：@babel/preset-env 实现语法转译、@babel/plugin-transform-runtime 配合 @babel/runtime-corejs[2|3] 实现 polyfill，辅助函数解冗，引入 regeneratorRuntime
 
 > 安装 @babel/preset-env 时也会安装 @babel/runtime，通过查看依赖关系可以发现
+
+## 补充
+
+- helpers 为 true 时：
+  - regenerator 为 true 时：使用 @babel/runtime[-corejs2|-corejs3]/regenerator 中的不污染全局范围的 regeneratorRuntime，但是使用过程中会声明一个全局变量 regeneratorRuntime
+  - regenerator 为 false 时：直接使用全局变量 regeneratorRuntime，如果没有这个全局变量就会运行出错
+- helpers 为 false 时：regenerator 参数失效，Babel 7.18.0 前也是直接使用全局变量 regeneratorRuntime，Babel 7.18.0 后因为 Babel 内置了 regenerate-runtime，因此使用 _regeneratorRuntime（Perfect！）
